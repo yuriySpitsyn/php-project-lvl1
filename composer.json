@@ -2,12 +2,17 @@
     "name": "spitsyn/php-project-lvl1",
     "authors": [
         {
-            "name": "phpshka",
-            "email": "jur.spitsyn@gmail.com"
+            "name": "yurok",
+            "email": "yur.spitsyn@gmail.com"
         }
     ],
     "bin": [
 	"bin/brain-games"
     ],
-    "require": {}
+    "autoload": {
+	"files": ["src/Cli.php"]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
