@@ -1,7 +1,9 @@
 language: php
+
 php:
   - 7.2.25
+
 install:
   - composer install
-script:
-  - make lint
+
+script: make lint
