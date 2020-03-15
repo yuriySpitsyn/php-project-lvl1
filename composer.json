@@ -2,12 +2,12 @@
     "name": "spitsyn/php-project-lvl1",
     "authors": [
         {
-            "name": "yurok",
+            "name": "yur.spitsyn",
             "email": "yur.spitsyn@gmail.com"
         }
     ],
     "bin": [
-	"bin/brain-games"
+	"bin/brain-even"
     ],
     "autoload": {
 	"files": ["src/Cli.php"]
