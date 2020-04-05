@@ -10,7 +10,10 @@
 	"bin/brain-even"
     ],
     "autoload": {
-	"files": ["src/Cli.php"]
+	"files": [
+        "src/Cli.php",
+        "src/games/Even.php"
+    ]
     },
     "scripts": {
 	"phpcs": "phpcs"
