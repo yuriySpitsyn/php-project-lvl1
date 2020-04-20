@@ -23,9 +23,15 @@
 - Перезапускаем ~/.bashrc
 
 	`source ~/.bashrc`
-	
-[![asciicast](https://asciinema.org/a/sPQeg2n0dXik5h7DObGWmLImd.svg)](https://asciinema.org/a/sPQeg2n0dXik5h7DObGWmLImd)
+
+Установка пакета:
+
+[![asciicast](https://asciinema.org/a/322133.svg)](https://asciinema.org/a/322133)
 
 Запуск brain-even:
 
-[![asciicast](https://asciinema.org/a/cAU5ITvOiE8RfrHykkuR8LYZW.svg)](https://asciinema.org/a/cAU5ITvOiE8RfrHykkuR8LYZW)
+[![asciicast](https://asciinema.org/a/322135.svg)](https://asciinema.org/a/322135)
+
+Запуск brain-calc:
+
+[![asciicast](https://asciinema.org/a/322137.svg)](https://asciinema.org/a/322137)
