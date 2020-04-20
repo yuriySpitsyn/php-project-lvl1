@@ -35,3 +35,7 @@
 Запуск brain-calc:
 
 [![asciicast](https://asciinema.org/a/322137.svg)](https://asciinema.org/a/322137)
+
+Запуск brain-gcd:
+
+[![asciicast](https://asciinema.org/a/322153.svg)](https://asciinema.org/a/322153)
