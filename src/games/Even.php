@@ -2,29 +2,28 @@
 
 namespace BrainGames\src\games\even;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\src\Cli\gameInterface;
 
-const CORRECT_ANSWER = 3;
+const INSTRUCTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function parityCheck($number)
 {
     return $number % 2 === 0;
 }
-function startGame($userName)
+
+function data()
 {
-    for ($countRound = 0; $countRound < CORRECT_ANSWER; $countRound++) {
-        $randomNum = rand(0, 100);
-        line("Question: {$randomNum}");
-        $answerUser = prompt('Your answer');
-        $correctAnswer = parityCheck($randomNum) ? "yes" : "no";
-        if ($answerUser == $correctAnswer) {
-            line('Correct!');
-        } else {
-            line("'yes' is wrong answer ;(. Correct answer was 'no'.
-Let's try again, {$userName}!");
-            return;
-        }
-    }
-    line("Congratulations, {$userName}!");
+    $randomNum = rand(0, 100);
+    $correctAnswer = parityCheck($randomNum) ? "yes" : "no";
+    return [
+        'question' => $randomNum,
+        'correctAnswer' => $correctAnswer,
+    ];
+}
+function run()
+{
+    $getData = function () {
+        return data();
+    };
+    gameInterface(INSTRUCTION, $getData);
 }

@@ -9,5 +9,5 @@ if (file_exists($fileLocal)) {
     require $fileGlobal;
 }
 
-use function BrainGames\src\games\even\run;
+use function BrainGames\src\games\calc\run;
 run();

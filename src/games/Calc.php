@@ -1,29 +1,43 @@
 <?php
 
-namespace BrainGames\src\games\even;
+namespace BrainGames\src\games\calc;
 
 use function BrainGames\src\Cli\gameInterface;
 
 const INSTRUCTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function parityCheck($number)
+function expressionSolution($randNum1, $randNum2, $operation)
 {
-    return $number % 2 === 0;
+    switch ($operation) {
+        case "+":
+            return $result = $randNum1 + $randNum2;
+            break;
+        case "-":
+            return $result = $randNum1 - $randNum2;
+            break;
+        case "*":
+            return $result = $randNum1 * $randNum2;
+    }
 }
+
 function data()
 {
-    $randomNum = rand(0, 100);
-    $correctAnswer = parityCheck($randomNum) ? "yes" : "no";
+    $randNum1 = rand(0, 100);
+    $randNum2 = rand(0, 100);
+    $mathOperations = ['+', '-', '*'];
+    $randOperation = array_rand(array_flip($mathOperations));
+    $MathExpression = $randNum1 . $randOperation . $randNum2;
+    $correctAnswer = expressionSolution($randNum1, $randNum2, $randOperation);
     return [
-        'question' => $randomNum,
+        'question' => $MathExpression,
         'correctAnswer' => $correctAnswer,
     ];
 }
+
 function run()
 {
     $getData = function () {
         return data();
     };
     gameInterface(INSTRUCTION, $getData);
-
 }

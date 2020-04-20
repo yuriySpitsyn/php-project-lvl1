@@ -32,4 +32,3 @@ function gameInterface($instruction, $getData)
     line("Hello, %s!", $userName);
     startGame($userName, $getData);
 }
-
