@@ -43,3 +43,7 @@
 Запуск brain-progression:
 
 [![asciicast](https://asciinema.org/a/322502.svg)](https://asciinema.org/a/322502)
+
+Запуск brain-prime:
+
+[![asciicast](https://asciinema.org/a/322552.svg)](https://asciinema.org/a/322552)
