@@ -39,3 +39,7 @@
 Запуск brain-gcd:
 
 [![asciicast](https://asciinema.org/a/322153.svg)](https://asciinema.org/a/322153)
+
+Запуск brain-progression:
+
+[![asciicast](https://asciinema.org/a/322502.svg)](https://asciinema.org/a/322502)
