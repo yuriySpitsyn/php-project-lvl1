@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+$fileLocal = dirname(__DIR__) . '/vendor/autoload.php';
+$fileGlobal = dirname(__DIR__, 3) . '/autoload.php';
+
+if (file_exists($fileLocal)) {
+    require $fileLocal;
+} else {
+    require $fileGlobal;
+}
+
+use function BrainGames\src\games\progression\run;
+run();
