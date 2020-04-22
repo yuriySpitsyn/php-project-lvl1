@@ -1,12 +1,12 @@
 <?php
 
-namespace BrainGames\src\games\prime;
+namespace BrainGames\src\Games\Prime;
 
 use function BrainGames\src\Cli\gameInterface;
 
 const INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function primeCheck($number)
+function isPrime($number)
 {
     if ($number < 2) {
         return false;
@@ -21,7 +21,9 @@ function primeCheck($number)
 function data()
 {
     $randomNum = rand(0, 100);
-    $correctAnswer = primeCheck($randomNum) ? "yes" : "no";
+
+    $correctAnswer = isPrime($randomNum) ? "yes" : "no";
+
     return [
         'question' => $randomNum,
         'correctAnswer' => $correctAnswer,
@@ -32,5 +34,6 @@ function run()
     $getData = function () {
         return data();
     };
+
     gameInterface(INSTRUCTION, $getData);
 }

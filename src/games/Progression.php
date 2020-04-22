@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\src\games\progression;
+namespace BrainGames\src\Games\Progression;
 
 use function BrainGames\src\Cli\gameInterface;
 
@@ -14,12 +14,15 @@ function data()
     $endNum = $firstNum + $step * ($progressionLength - 1);
 
     $progression = range($firstNum, $endNum, $step);
+
     $hiddenElementIndex = array_rand($progression);
 
     $correctAnswer = $progression[$hiddenElementIndex];
 
     $progression[$hiddenElementIndex] = '..';
+
     $arrayToString = implode(' ', $progression);
+
     return [
         'question' => $arrayToString,
         'correctAnswer' => $correctAnswer,
@@ -31,5 +34,6 @@ function run()
     $getData = function () {
         return data();
     };
+
     gameInterface(INSTRUCTION, $getData);
 }

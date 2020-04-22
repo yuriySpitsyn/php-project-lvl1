@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\src\games\calc;
+namespace BrainGames\src\Games\Calc;
 
 use function BrainGames\src\Cli\gameInterface;
 
@@ -10,14 +10,15 @@ function expressionSolution($randNum1, $randNum2, $operation)
 {
     switch ($operation) {
         case "+":
-            return $result = $randNum1 + $randNum2;
+            $result = $randNum1 + $randNum2;
             break;
         case "-":
-            return $result = $randNum1 - $randNum2;
+            $result = $randNum1 - $randNum2;
             break;
         case "*":
-            return $result = $randNum1 * $randNum2;
+            $result = $randNum1 * $randNum2;
     }
+    return $result;
 }
 
 function data()
@@ -25,9 +26,13 @@ function data()
     $randNum1 = rand(0, 100);
     $randNum2 = rand(0, 100);
     $mathOperations = ['+', '-', '*'];
+
     $randOperation = array_rand(array_flip($mathOperations));
+
     $MathExpression = $randNum1 . $randOperation . $randNum2;
+
     $correctAnswer = expressionSolution($randNum1, $randNum2, $randOperation);
+
     return [
         'question' => $MathExpression,
         'correctAnswer' => $correctAnswer,
@@ -39,5 +44,6 @@ function run()
     $getData = function () {
         return data();
     };
+
     gameInterface(INSTRUCTION, $getData);
 }

@@ -11,8 +11,10 @@ function startGame($userName, $getData)
 {
     for ($countRound = 0; $countRound < CORRECT_ANSWER; $countRound++) {
         $Data = $getData();
+
         line("Question: {$Data['question']}");
         $answerUser = prompt('Your answer');
+
         if ($answerUser == $Data['correctAnswer']) {
             line('Correct!');
         } else {
@@ -30,5 +32,6 @@ function gameInterface($instruction, $getData)
 
     $userName = prompt('May I have your name?');
     line("Hello, %s!", $userName);
+
     startGame($userName, $getData);
 }

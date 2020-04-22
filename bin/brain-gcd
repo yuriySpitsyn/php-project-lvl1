@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 $fileLocal = dirname(__DIR__) . '/vendor/autoload.php';
 $fileGlobal = dirname(__DIR__, 3) . '/autoload.php';
 
@@ -9,5 +10,5 @@ if (file_exists($fileLocal)) {
     require $fileGlobal;
 }
 
-use function BrainGames\src\games\gcd\run;
+use function BrainGames\src\Games\Gcd\run;
 run();
