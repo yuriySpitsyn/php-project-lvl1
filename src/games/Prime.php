@@ -18,21 +18,18 @@ function isPrime($number)
     }
     return true;
 }
-function data()
-{
-    $randomNum = rand(0, 100);
 
-    $correctAnswer = isPrime($randomNum) ? "yes" : "no";
-
-    return [
-        'question' => $randomNum,
-        'correctAnswer' => $correctAnswer,
-    ];
-}
 function run()
 {
     $getData = function () {
-        return data();
+        $randomNum = rand(0, 100);
+
+        $correctAnswer = isPrime($randomNum) ? "yes" : "no";
+
+        return [
+            'question' => $randomNum,
+            'correctAnswer' => $correctAnswer,
+        ];
     };
 
     gameInterface(INSTRUCTION, $getData);

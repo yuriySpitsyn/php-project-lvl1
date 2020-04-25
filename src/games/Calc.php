@@ -6,7 +6,7 @@ use function BrainGames\src\Cli\gameInterface;
 
 const INSTRUCTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function expressionSolution($randNum1, $randNum2, $operation)
+function calculate($randNum1, $randNum2, $operation)
 {
     switch ($operation) {
         case "+":
@@ -21,28 +21,23 @@ function expressionSolution($randNum1, $randNum2, $operation)
     return $result;
 }
 
-function data()
-{
-    $randNum1 = rand(0, 100);
-    $randNum2 = rand(0, 100);
-    $mathOperations = ['+', '-', '*'];
-
-    $randOperation = array_rand(array_flip($mathOperations));
-
-    $MathExpression = $randNum1 . $randOperation . $randNum2;
-
-    $correctAnswer = expressionSolution($randNum1, $randNum2, $randOperation);
-
-    return [
-        'question' => $MathExpression,
-        'correctAnswer' => $correctAnswer,
-    ];
-}
-
 function run()
 {
     $getData = function () {
-        return data();
+        $randNum1 = rand(0, 100);
+        $randNum2 = rand(0, 100);
+        $mathOperations = ['+', '-', '*'];
+
+        $randOperation = array_rand(array_flip($mathOperations));
+
+        $mathExpression = $randNum1 . $randOperation . $randNum2;
+
+        $correctAnswer = calculate($randNum1, $randNum2, $randOperation);
+
+        return [
+            'question' => $mathExpression,
+            'correctAnswer' => $correctAnswer,
+        ];
     };
 
     gameInterface(INSTRUCTION, $getData);

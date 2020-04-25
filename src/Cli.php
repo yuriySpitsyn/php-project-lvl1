@@ -5,11 +5,11 @@ namespace BrainGames\src\Cli;
 use function cli\line;
 use function cli\prompt;
 
-const CORRECT_ANSWER = 3;
+const CORRECT_ANSWERS_COUNT = 3;
 
 function startGame($userName, $getData)
 {
-    for ($countRound = 0; $countRound < CORRECT_ANSWER; $countRound++) {
+    for ($countRound = 0; $countRound < CORRECT_ANSWERS_COUNT; $countRound++) {
         $Data = $getData();
 
         line("Question: {$Data['question']}");
