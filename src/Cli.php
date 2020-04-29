@@ -10,16 +10,18 @@ const CORRECT_ANSWERS_COUNT = 3;
 function startGame($userName, $getData)
 {
     for ($countRound = 0; $countRound < CORRECT_ANSWERS_COUNT; $countRound++) {
-        $Data = $getData();
+        $data = $getData();
+        $question = $data['question'];
+        $correctAnswer = $data['correctAnswer'];
 
-        line("Question: {$Data['question']}");
+        line("Question: {$question}");
         $answerUser = prompt('Your answer');
 
-        if ($answerUser == $Data['correctAnswer']) {
+        if ($answerUser == $correctAnswer) {
             line('Correct!');
         } else {
-            line("'{$answerUser}' is wrong answer ;(. Correct answer was '{$Data['correctAnswer']}'.
-Let's try again, {$userName}!");
+            line("'{$answerUser}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$userName}!");
             return;
         }
     }

@@ -17,10 +17,11 @@ function run()
         $randomNum1 = rand(0, 100);
         $randomNum2 = rand(0, 100);
 
+        $question = "{$randomNum1} {$randomNum2}";
         $correctAnswer = getGreatestCommonDivisor($randomNum1, $randomNum2);
 
         return [
-            'question' => $randomNum1 . " " . $randomNum2,
+            'question' => $question,
             'correctAnswer' => $correctAnswer,
         ];
     };
