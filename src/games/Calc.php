@@ -2,7 +2,7 @@
 
 namespace BrainGames\src\Games\Calc;
 
-use function BrainGames\src\Cli\gameInterface;
+use function BrainGames\src\Cli\startGame;
 
 const INSTRUCTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -40,5 +40,5 @@ function run()
         ];
     };
 
-    gameInterface(INSTRUCTION, $getData);
+    startGame(INSTRUCTION, $getData);
 }

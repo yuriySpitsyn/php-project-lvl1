@@ -2,7 +2,7 @@
 
 namespace BrainGames\src\Games\Progression;
 
-use function BrainGames\src\Cli\gameInterface;
+use function BrainGames\src\Cli\startGame;
 
 const INSTRUCTION = 'What number is missing in the progression?';
 
@@ -30,5 +30,5 @@ function run()
         ];
     };
 
-    gameInterface(INSTRUCTION, $getData);
+    startGame(INSTRUCTION, $getData);
 }

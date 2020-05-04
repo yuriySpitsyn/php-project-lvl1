@@ -7,7 +7,7 @@
         }
     ],
     "bin": [
-	    "bin/brain-even",
+        "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-progression",
@@ -24,7 +24,7 @@
     ]
     },
     "scripts": {
-	    "phpcs": "phpcs"
+        "phpcs": "phpcs"
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"

@@ -2,7 +2,7 @@
 
 namespace BrainGames\src\Games\Prime;
 
-use function BrainGames\src\Cli\gameInterface;
+use function BrainGames\src\Cli\startGame;
 
 const INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -32,5 +32,5 @@ function run()
         ];
     };
 
-    gameInterface(INSTRUCTION, $getData);
+    startGame(INSTRUCTION, $getData);
 }

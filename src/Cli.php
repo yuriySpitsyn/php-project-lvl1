@@ -7,12 +7,11 @@ use function cli\prompt;
 
 const CORRECT_ANSWERS_COUNT = 3;
 
-function startGame($userName, $getData)
+function startRound($userName, $getData)
 {
     for ($countRound = 0; $countRound < CORRECT_ANSWERS_COUNT; $countRound++) {
         $data = $getData();
-        $question = $data['question'];
-        $correctAnswer = $data['correctAnswer'];
+        ['question' => $question, 'correctAnswer' => $correctAnswer] = $data;
 
         line("Question: {$question}");
         $answerUser = prompt('Your answer');
@@ -27,7 +26,7 @@ function startGame($userName, $getData)
     }
     line("Congratulations, {$userName}!");
 }
-function gameInterface($instruction, $getData)
+function startGame($instruction, $getData)
 {
     line('Welcome to the Brain Games!');
     line($instruction);
@@ -35,5 +34,5 @@ function gameInterface($instruction, $getData)
     $userName = prompt('May I have your name?');
     line("Hello, %s!", $userName);
 
-    startGame($userName, $getData);
+    startRound($userName, $getData);
 }
